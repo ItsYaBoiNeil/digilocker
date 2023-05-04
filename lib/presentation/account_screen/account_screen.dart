@@ -315,7 +315,7 @@ class AccountScreen extends GetWidget<AccountController> {
                     CustomImageView(
                       svgPath: ImageConstant.imgSearch,
                       height: getVerticalSize(
-                        18,
+                        90,
                       ),
                       width: getHorizontalSize(
                         28,

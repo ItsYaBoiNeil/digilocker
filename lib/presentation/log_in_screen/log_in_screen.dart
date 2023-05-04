@@ -40,30 +40,33 @@ class LogInScreen extends GetWidget<LogInController> {
                                         textAlign: TextAlign.left,
                                         style: AppStyle.txtKanitBlack26)),
                                 Padding(
-                                    padding: getPadding(left: 2, top: 4),
-                                    child: Text("msg_enter_your_emails".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtKanitBlack16)),
+                                  padding: getPadding(top: 36),
+                                  child: TextField(
+                                    style: TextStyle(color: Colors.black),
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.grey.shade100,
+                                      filled: true,
+                                      hintText: "Email",
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 Padding(
-                                    padding: getPadding(left: 1, top: 36),
-                                    child: Text("lbl_email".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtKanitBlack16)),
-                                Padding(
-                                    padding: getPadding(top: 51),
-                                    child: Divider(
-                                        height: getVerticalSize(1),
-                                        thickness: getVerticalSize(1),
-                                        color: ColorConstant.gray300,
-                                        indent: getHorizontalSize(2))),
-                                Padding(
-                                    padding: getPadding(left: 1, top: 31),
-                                    child: Text("lbl_password".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtKanitBlack16)),
+                                  padding: getPadding(top: 36),
+                                  child: TextField(
+                                    style: TextStyle(color: Colors.black),
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.grey.shade100,
+                                      filled: true,
+                                      hintText: "Password",
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 CustomImageView(
                                     svgPath: ImageConstant.imgCheckmark,
                                     height: getVerticalSize(18),

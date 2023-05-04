@@ -38,6 +38,9 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                       width: getHorizontalSize(
                         10,
                       ),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
                       margin: getMargin(
                         bottom: 274,
                       ),

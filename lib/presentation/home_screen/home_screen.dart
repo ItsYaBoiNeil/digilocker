@@ -111,46 +111,55 @@ class HomeScreen extends GetWidget<HomeController> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  Padding(
-                                                      padding: getPadding(
-                                                          left: 5,
-                                                          top: 1,
-                                                          bottom: 13),
-                                                      child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            CustomImageView(
-                                                                svgPath:
-                                                                    ImageConstant
-                                                                        .imgGroup8,
-                                                                height:
-                                                                    getVerticalSize(
-                                                                        26),
-                                                                width:
-                                                                    getHorizontalSize(
-                                                                        30),
-                                                                alignment: Alignment
-                                                                    .centerRight),
-                                                            Align(
-                                                                alignment: Alignment
-                                                                    .center,
-                                                                child: Text(
-                                                                    "lbl_home"
-                                                                        .tr,
-                                                                    overflow:
-                                                                        TextOverflow
-                                                                            .ellipsis,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .left,
-                                                                    style: AppStyle
-                                                                        .txtKanitBlack12))
-                                                          ])),
+                                                  Spacer(flex: 20),
+                                                  GestureDetector(
+                                                      onTap: () {
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            '/onbording_screen');
+                                                      },
+                                                      child: Padding(
+                                                          padding: getPadding(
+                                                            top: 1,
+                                                            bottom: 13,
+                                                          ),
+                                                          child: Column(
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                CustomImageView(
+                                                                    svgPath:
+                                                                        ImageConstant
+                                                                            .imgGroup8,
+                                                                    height:
+                                                                        getVerticalSize(
+                                                                            26),
+                                                                    width:
+                                                                        getHorizontalSize(
+                                                                            30),
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .centerRight),
+                                                                Align(
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .center,
+                                                                    child: Text(
+                                                                        "lbl_home"
+                                                                            .tr,
+                                                                        overflow:
+                                                                            TextOverflow
+                                                                                .ellipsis,
+                                                                        textAlign:
+                                                                            TextAlign
+                                                                                .left,
+                                                                        style: AppStyle
+                                                                            .txtKanitBlack12))
+                                                              ]))),
                                                   Spacer(flex: 52),
                                                   GestureDetector(
                                                       onTap: () {

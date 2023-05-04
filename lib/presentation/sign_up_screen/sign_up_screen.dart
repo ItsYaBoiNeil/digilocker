@@ -28,22 +28,26 @@ class SignUpScreen extends GetWidget<SignUpController> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Spacer(),
-                                Text("lbl_password".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: AppStyle.txtKanitBlack16),
+                                Padding(
+                                  padding: getPadding(top: 20),
+                                  child: TextField(
+                                    style: TextStyle(color: Colors.black),
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.grey.shade100,
+                                      filled: true,
+                                      hintText: "Password",
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 CustomImageView(
                                     svgPath: ImageConstant.imgCheckmark,
                                     height: getVerticalSize(18),
                                     width: getHorizontalSize(19),
                                     alignment: Alignment.centerRight,
                                     margin: getMargin(top: 17)),
-                                Padding(
-                                    padding: getPadding(top: 15),
-                                    child: Divider(
-                                        height: getVerticalSize(1),
-                                        thickness: getVerticalSize(1),
-                                        color: ColorConstant.gray300)),
                                 Container(
                                     width: getHorizontalSize(356),
                                     margin: getMargin(top: 17, right: 7),
@@ -168,17 +172,19 @@ class SignUpScreen extends GetWidget<SignUpController> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                    padding: getPadding(top: 32),
-                                    child: Text("lbl_email".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtKanitBlack16)),
-                                Padding(
-                                    padding: getPadding(top: 51),
-                                    child: Divider(
-                                        height: getVerticalSize(1),
-                                        thickness: getVerticalSize(1),
-                                        color: ColorConstant.gray300))
+                                  padding: getPadding(top: 20),
+                                  child: TextField(
+                                    style: TextStyle(color: Colors.black),
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.grey.shade100,
+                                      filled: true,
+                                      hintText: "Email",
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ]))),
                   Align(
                       alignment: Alignment.center,
@@ -209,13 +215,21 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                         textAlign: TextAlign.left,
                                         style: AppStyle.txtKanitBlack16)),
                                 Padding(
-                                    padding: getPadding(top: 36),
-                                    child: Text("lbl_username".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle.txtKanitBlack16)),
+                                  padding: getPadding(top: 20),
+                                  child: TextField(
+                                    style: TextStyle(color: Colors.black),
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.grey.shade100,
+                                      filled: true,
+                                      hintText: "Username",
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 Padding(
-                                    padding: getPadding(top: 51, bottom: 484),
+                                    padding: getPadding(bottom: 484),
                                     child: Divider(
                                         height: getVerticalSize(1),
                                         thickness: getVerticalSize(1),
