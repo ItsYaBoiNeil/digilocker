@@ -216,24 +216,10 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                         style: AppStyle.txtKanitBlack16)),
                                 Padding(
                                   padding: getPadding(top: 20),
-                                  child: TextField(
-                                    style: TextStyle(color: Colors.black),
-                                    decoration: InputDecoration(
-                                      fillColor: Colors.grey.shade100,
-                                      filled: true,
-                                      hintText: "Username",
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                    ),
-                                  ),
                                 ),
                                 Padding(
-                                    padding: getPadding(bottom: 484),
-                                    child: Divider(
-                                        height: getVerticalSize(1),
-                                        thickness: getVerticalSize(1),
-                                        color: ColorConstant.gray300))
+                                  padding: getPadding(bottom: 484),
+                                )
                               ])))
                 ]))));
   }

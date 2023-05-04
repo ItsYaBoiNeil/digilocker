@@ -309,18 +309,6 @@ class AccountScreen extends GetWidget<AccountController> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-<<<<<<< HEAD
-                    CustomImageView(
-                      svgPath: ImageConstant.imgSearch,
-                      height: getVerticalSize(
-                        90,
-                      ),
-                      width: getHorizontalSize(
-                        28,
-                      ),
-                    ),
-=======
->>>>>>> 05d0efb8d410d98e78666d5c3cf401a540f4d721
                     Padding(
                       padding: getPadding(
                         top: 6,

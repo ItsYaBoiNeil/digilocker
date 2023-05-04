@@ -108,7 +108,7 @@ class LogInScreen extends GetWidget<LogInController> {
                                         },
                                         child: Padding(
                                             padding: getPadding(
-                                                top: 23, bottom: 201),
+                                                top: 23, bottom: 180),
                                             child: RichText(
                                                 text: TextSpan(children: [
                                                   TextSpan(
