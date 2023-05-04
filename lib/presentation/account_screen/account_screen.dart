@@ -263,12 +263,6 @@ class AccountScreen extends GetWidget<AccountController> {
                         padding: getPadding(
                           bottom: 3,
                         ),
-                        child: Text(
-                          "lbl_home".tr,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtJosefinSansRomanRegular14,
-                        ),
                       ),
                     ),
                     Align(
@@ -279,6 +273,9 @@ class AccountScreen extends GetWidget<AccountController> {
                         children: [
                           CustomImageView(
                             svgPath: ImageConstant.imgStore1,
+                            onTap: () {
+                              navigateToHome();
+                            },
                             height: getSize(
                               24,
                             ),
@@ -291,7 +288,7 @@ class AccountScreen extends GetWidget<AccountController> {
                               top: 4,
                             ),
                             child: Text(
-                              "lbl_shop".tr,
+                              "Home".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtKanitBlack12Gray900,
@@ -312,24 +309,9 @@ class AccountScreen extends GetWidget<AccountController> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CustomImageView(
-                      svgPath: ImageConstant.imgSearch,
-                      height: getVerticalSize(
-                        18,
-                      ),
-                      width: getHorizontalSize(
-                        28,
-                      ),
-                    ),
                     Padding(
                       padding: getPadding(
                         top: 6,
-                      ),
-                      child: Text(
-                        "lbl_explore".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtKanitBlack12Gray900,
                       ),
                     ),
                   ],
@@ -356,12 +338,6 @@ class AccountScreen extends GetWidget<AccountController> {
                         padding: getPadding(
                           bottom: 2,
                         ),
-                        child: Text(
-                          "lbl_courses".tr,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtJosefinSansRomanBold14,
-                        ),
                       ),
                     ),
                     Align(
@@ -372,12 +348,15 @@ class AccountScreen extends GetWidget<AccountController> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           CustomImageView(
-                            svgPath: ImageConstant.imgCart,
+                            svgPath: ImageConstant.imgSearch,
+                            onTap: () {
+                              navigateToaddVehicle();
+                            },
                             height: getVerticalSize(
-                              19,
+                              18,
                             ),
                             width: getHorizontalSize(
-                              21,
+                              28,
                             ),
                             margin: getMargin(
                               left: 1,
@@ -390,7 +369,7 @@ class AccountScreen extends GetWidget<AccountController> {
                                 top: 5,
                               ),
                               child: Text(
-                                "lbl_cart".tr,
+                                "Add Vehicles".tr,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: AppStyle.txtKanitBlack12Gray900,
@@ -412,24 +391,9 @@ class AccountScreen extends GetWidget<AccountController> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    CustomImageView(
-                      svgPath: ImageConstant.imgBookmark1Gray900,
-                      height: getSize(
-                        24,
-                      ),
-                      width: getSize(
-                        24,
-                      ),
-                    ),
                     Padding(
                       padding: getPadding(
                         top: 2,
-                      ),
-                      child: Text(
-                        "lbl_favourite".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtKanitBlack12Gray900,
                       ),
                     ),
                   ],
@@ -454,12 +418,6 @@ class AccountScreen extends GetWidget<AccountController> {
                         padding: getPadding(
                           bottom: 3,
                         ),
-                        child: Text(
-                          "lbl_profile".tr,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtJosefinSansRomanRegular14,
-                        ),
                       ),
                     ),
                     Align(
@@ -470,6 +428,7 @@ class AccountScreen extends GetWidget<AccountController> {
                         children: [
                           CustomImageView(
                             svgPath: ImageConstant.imgUserGreen400,
+                            color: Colors.black,
                             height: getSize(
                               24,
                             ),
@@ -482,10 +441,10 @@ class AccountScreen extends GetWidget<AccountController> {
                               top: 3,
                             ),
                             child: Text(
-                              "lbl_account".tr,
+                              "Account".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
-                              style: AppStyle.txtKanitBlack12Green400,
+                              style: AppStyle.txtKanitBlack12Gray900,
                             ),
                           ),
                         ],
@@ -498,6 +457,18 @@ class AccountScreen extends GetWidget<AccountController> {
           ),
         ),
       ),
+    );
+  }
+
+  void navigateToHome() {
+    Get.offNamed(
+      AppRoutes.homeScreen,
+    );
+  }
+
+  void navigateToaddVehicle() {
+    Get.offNamed(
+      AppRoutes.productDetailScreen,
     );
   }
 }
