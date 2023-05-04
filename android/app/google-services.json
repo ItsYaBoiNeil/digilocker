@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "293937027064",
+    "project_id": "digilocker-d36d6",
+    "storage_bucket": "digilocker-d36d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293937027064:android:094136aba6b4db54b9a80d",
+        "android_client_info": {
+          "package_name": "com.digilocker.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293937027064-q82cb5cng217atn1iv7sgun8mj9hkrpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digilocker.app",
+            "certificate_hash": "163abbbdbdc9cb03245ba42a64dff62fe023434f"
+          }
+        },
+        {
+          "client_id": "293937027064-snjqaanmhife01uicakjpbfmp9qgubjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBydLyZTtKH-74W2Vfue7Ec07Co_QDwyiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "293937027064-snjqaanmhife01uicakjpbfmp9qgubjk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

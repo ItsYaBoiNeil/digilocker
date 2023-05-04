@@ -113,11 +113,6 @@ class HomeScreen extends GetWidget<HomeController> {
                                                 children: [
                                                   Spacer(flex: 20),
                                                   GestureDetector(
-                                                      onTap: () {
-                                                        Navigator.pushNamed(
-                                                            context,
-                                                            '/onbording_screen');
-                                                      },
                                                       child: Padding(
                                                           padding: getPadding(
                                                             top: 1,

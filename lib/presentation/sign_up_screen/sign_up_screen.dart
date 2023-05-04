@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'controller/sign_up_controller.dart';
 import 'package:digilocker/core/app_export.dart';
 import 'package:digilocker/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends GetWidget<SignUpController> {
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _emailTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,6 +35,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                 Padding(
                                   padding: getPadding(top: 20),
                                   child: TextField(
+                                    controller: _passwordTextController,
                                     style: TextStyle(color: Colors.black),
                                     decoration: InputDecoration(
                                       fillColor: Colors.grey.shade100,
@@ -114,7 +119,17 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                     text: "lbl_sign_up2".tr,
                                     margin: getMargin(top: 26),
                                     onTap: () {
-                                      navigatetoHome();
+                                      FirebaseAuth.instance
+                                          .createUserWithEmailAndPassword(
+                                              email: _emailTextController.text,
+                                              password:
+                                                  _passwordTextController.text)
+                                          .then((value) {
+                                        print("New User Create");
+                                        navigatetoHome();
+                                      }).onError((error, stackTrace) {
+                                        print("Error ${error.toString()}");
+                                      });
                                     }),
                                 Align(
                                     alignment: Alignment.center,
@@ -174,6 +189,7 @@ class SignUpScreen extends GetWidget<SignUpController> {
                                 Padding(
                                   padding: getPadding(top: 20),
                                   child: TextField(
+                                    controller: _emailTextController,
                                     style: TextStyle(color: Colors.black),
                                     decoration: InputDecoration(
                                       fillColor: Colors.grey.shade100,

@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'controller/log_in_controller.dart';
 import 'package:digilocker/core/app_export.dart';
 import 'package:digilocker/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class LogInScreen extends GetWidget<LogInController> {
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _emailTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,6 +46,7 @@ class LogInScreen extends GetWidget<LogInController> {
                                 Padding(
                                   padding: getPadding(top: 36),
                                   child: TextField(
+                                    controller: _emailTextController,
                                     style: TextStyle(color: Colors.black),
                                     decoration: InputDecoration(
                                       fillColor: Colors.grey.shade100,
@@ -56,6 +61,7 @@ class LogInScreen extends GetWidget<LogInController> {
                                 Padding(
                                   padding: getPadding(top: 36),
                                   child: TextField(
+                                    controller: _passwordTextController,
                                     style: TextStyle(color: Colors.black),
                                     decoration: InputDecoration(
                                       fillColor: Colors.grey.shade100,
@@ -98,7 +104,17 @@ class LogInScreen extends GetWidget<LogInController> {
                                     text: "lbl_log_in".tr,
                                     margin: getMargin(left: 2, top: 12),
                                     onTap: () {
-                                      navigatetoHome();
+                                      FirebaseAuth.instance
+                                          .signInWithEmailAndPassword(
+                                              email: _emailTextController.text,
+                                              password:
+                                                  _passwordTextController.text)
+                                          .then((value) {
+                                        print("Logged In");
+                                        navigatetoHome();
+                                      }).onError((error, stackTrace) {
+                                        print("Error ${error.toString()}");
+                                      });
                                     }),
                                 Align(
                                     alignment: Alignment.center,
