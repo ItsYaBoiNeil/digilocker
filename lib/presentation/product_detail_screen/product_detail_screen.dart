@@ -32,15 +32,15 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                   children: [
                     CustomImageView(
                       svgPath: ImageConstant.imgBackarrow,
+                      onTap: () {
+                        navigateToHome();
+                      },
                       height: getVerticalSize(
                         18,
                       ),
                       width: getHorizontalSize(
                         10,
                       ),
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
                       margin: getMargin(
                         bottom: 274,
                       ),
@@ -382,6 +382,12 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
           ),
         ),
       ),
+    );
+  }
+
+  void navigateToHome() {
+    Get.offNamed(
+      AppRoutes.homeScreen,
     );
   }
 }
