@@ -28,6 +28,14 @@ class AccountScreen extends GetWidget<AccountController> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      Text(
+                        "Title",
+                        style: TextStyle(
+                          fontSize: 100.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       Container(
                           height: getVerticalSize(67),
                           width: getHorizontalSize(66),
@@ -50,7 +58,7 @@ class AccountScreen extends GetWidget<AccountController> {
                               child: Text("lbl_driver_mail".tr,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
-                                  style: AppStyle.txtKanitBlack16)))
+                                  style: AppStyle.txtKanitBlack16))),
                     ])),
             actions: [
               AppbarImage(
@@ -61,37 +69,27 @@ class AccountScreen extends GetWidget<AccountController> {
             ]),
         body: Container(
             width: double.maxFinite,
-            padding: getPadding(top: 24, bottom: 24),
+            padding: getPadding(
+              top: 50,
+            ),
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Padding(
-                  padding: getPadding(top: 12),
-                  child: Divider(
-                      height: getVerticalSize(1),
-                      thickness: getVerticalSize(1),
-                      color: ColorConstant.gray300)),
-              Padding(
-                  padding: getPadding(left: 22, top: 20, right: 25),
-                  child: Obx(() => ListView.separated(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      separatorBuilder: (context, index) {
-                        return Padding(
-                            padding: getPadding(top: 13.0, bottom: 13.0),
-                            child: SizedBox(
-                                width: getHorizontalSize(413),
-                                child: Divider(
-                                    height: getVerticalSize(1),
-                                    thickness: getVerticalSize(1),
-                                    color: ColorConstant.gray300)));
-                      },
-                      itemCount: controller
-                          .accountModelObj.value.accountItemList.value.length,
-                      itemBuilder: (context, index) {
-                        AccountItemModel model = controller
-                            .accountModelObj.value.accountItemList.value[index];
-                        return AccountItemWidget(model);
-                      }))),
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // add your onPressed function here
+                  },
+                  child: Text(
+                    "all documents",
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                   padding: getPadding(top: 13),
                   child: Divider(
