@@ -71,17 +71,17 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                         ),
                       ),
                     ),
-                    CustomImageView(
-                      svgPath: ImageConstant.imgUpload,
-                      height: getSize(
-                        18,
-                      ),
-                      width: getSize(
-                        18,
-                      ),
-                      margin: getMargin(
-                        left: 22,
-                        bottom: 274,
+                    GestureDetector(
+                      onTap: () {
+                        // Add your onTap logic here
+                      },
+                      child: SizedBox(
+                        height: getSize(18),
+                        width: getSize(18),
+                        child: Image.asset(
+                          ImageConstant.imgUpload,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ],
