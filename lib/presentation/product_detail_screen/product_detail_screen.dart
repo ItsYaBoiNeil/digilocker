@@ -6,7 +6,6 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore_for_file: must_be_immutable
 class ProductDetailScreen extends GetWidget<ProductDetailController> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
