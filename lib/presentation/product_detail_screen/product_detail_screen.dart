@@ -188,6 +188,22 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                 ),
               ),
               Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // add your onPressed function here
+                  },
+                  child: Text(
+                    "all documents",
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
                 padding: getPadding(
                   left: 30,
                   top: 14,
@@ -197,29 +213,6 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "lbl_details".tr,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtKanitBlack16Gray900,
-                        ),
-                        Container(
-                          width: getHorizontalSize(
-                            70,
-                          ),
-                          child: Text(
-                            "msg_chassis_no_engine".tr,
-                            maxLines: null,
-                            textAlign: TextAlign.left,
-                            style: AppStyle.txtKanitBlack13,
-                          ),
-                        ),
-                      ],
-                    ),
                     CustomImageView(
                       svgPath: ImageConstant.imgArrowdownGray900,
                       height: getVerticalSize(
@@ -234,26 +227,6 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                       ),
                     ),
                   ],
-                ),
-              ),
-              Padding(
-                padding: getPadding(
-                  top: 10,
-                ),
-                child: Divider(
-                  height: getVerticalSize(
-                    1,
-                  ),
-                  thickness: getVerticalSize(
-                    1,
-                  ),
-                  color: ColorConstant.gray300B2,
-                  indent: getHorizontalSize(
-                    25,
-                  ),
-                  endIndent: getHorizontalSize(
-                    25,
-                  ),
                 ),
               ),
               Padding(
