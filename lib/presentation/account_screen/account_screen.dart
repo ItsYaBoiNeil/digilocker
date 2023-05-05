@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 
 // ignore_for_file: must_be_immutable
 class AccountScreen extends GetWidget<AccountController> {
+  TextEditingController _detailsTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -86,6 +87,21 @@ class AccountScreen extends GetWidget<AccountController> {
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: getPadding(top: 36),
+                child: TextField(
+                  controller: _detailsTextController,
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    fillColor: Colors.grey.shade100,
+                    filled: true,
+                    hintText: "DETAILS",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
