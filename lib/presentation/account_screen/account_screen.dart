@@ -92,22 +92,6 @@ class AccountScreen extends GetWidget<AccountController> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    // add your onPressed function here
-                  },
-                  child: Text(
-                    "all documents",
-                    style: TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
                 padding: getPadding(top: 36),
                 child: TextField(
                   controller: _detailsTextController,
