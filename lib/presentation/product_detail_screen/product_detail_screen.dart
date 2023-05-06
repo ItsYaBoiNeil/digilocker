@@ -3,6 +3,12 @@ import 'package:digilocker/core/app_export.dart';
 import 'package:digilocker/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:digilocker/widgets/custom_image.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:digilocker/widgets/uploader.dart';
+import 'dart:io';
+import 'package:firebase_storage/firebase_storage.dart';
 
 // ignore_for_file: must_be_immutable
 class ProductDetailScreen extends GetWidget<ProductDetailController> {
@@ -73,14 +79,27 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Add your onTap logic here
+                        getImage();
+                        //_cropImage();
+                        //Uploader(file: selectedImage);
+                        print("test");
+                        //navigateToHome();
                       },
-                      child: SizedBox(
-                        height: getSize(18),
-                        width: getSize(18),
-                        child: Image.asset(
-                          ImageConstant.imgUpload,
-                          color: Colors.black,
+                      child: CustomImageView(
+                        svgPath: ImageConstant.imgUpload,
+                        onTap: () {
+                          getImage();
+                          print(selectedImage);
+                          _startUpload();
+                        },
+                        height: getVerticalSize(
+                          20,
+                        ),
+                        width: getHorizontalSize(
+                          20,
+                        ),
+                        margin: getMargin(
+                          bottom: 274,
                         ),
                       ),
                     ),
@@ -389,5 +408,50 @@ class ProductDetailScreen extends GetWidget<ProductDetailController> {
     Get.offNamed(
       AppRoutes.homeScreen,
     );
+  }
+
+  void navigateToImageSelection() {
+    Get.offNamed(
+      AppRoutes.homeScreen,
+    );
+  }
+
+  File? selectedImage;
+  CroppedFile? cropped;
+
+  Future getImage() async {
+    var image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    print('test2');
+    selectedImage = File(image!.path);
+  }
+
+  Future<void> _cropImage() async {
+    if (selectedImage != null) {
+      final croppedFile = await ImageCropper().cropImage(
+        sourcePath: selectedImage!.path,
+        compressFormat: ImageCompressFormat.jpg,
+        compressQuality: 100,
+        uiSettings: [
+          AndroidUiSettings(
+              toolbarTitle: 'Crop Your Image',
+              toolbarColor: Colors.blue,
+              toolbarWidgetColor: Colors.blue,
+              initAspectRatio: CropAspectRatioPreset.original,
+              lockAspectRatio: false),
+        ],
+      );
+    }
+  }
+
+  final FirebaseStorage _firebaseStorage =
+      FirebaseStorage.instanceFor(bucket: 'gs://digilocker-d36d6.appspot.com');
+
+  late UploadTask _uploadTask;
+  File file = new File('');
+
+  void _startUpload() {
+    File file = File(selectedImage!.path);
+    String filepath = 'files/${DateTime.now()}.jpg';
+    _uploadTask = _firebaseStorage.ref().child(filepath).putFile(file);
   }
 }

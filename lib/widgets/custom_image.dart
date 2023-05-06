@@ -19,7 +19,7 @@ class _ImageCaptureState extends State<ImageCapture> {
 
   Future getImage() async {
     var image = await ImagePicker().pickImage(source: ImageSource.gallery);
-
+    print('test2');
     setState(() {
       selectedImage = File(image!.path);
     });
